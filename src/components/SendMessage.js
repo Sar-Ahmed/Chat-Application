@@ -16,6 +16,7 @@ function SendMessage({ scroll }) {
       photoURL,
       uid,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      name: auth?.currentUser?._delegate?.displayName
     });
     setMsg("");
     scroll.current.scrollIntoView({ behavior: "smooth" });

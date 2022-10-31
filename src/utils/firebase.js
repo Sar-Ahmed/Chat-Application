@@ -15,6 +15,14 @@ const firebaseApp = firebase.initializeApp({
 
 const db = firebaseApp.firestore();
 const auth = firebase.auth();
-//const db = getFirestore(firebaseApp);
+const user = firebase.auth().currentUser;
+
+const credential = firebase.auth.EmailAuthProvider.credential(
+  user.email, 
+  'yourpassword'
+
+);
+// Now you can use that to reauthenticate
+user.reauthenticateWithCredential(credential);
 
 export { db, auth };

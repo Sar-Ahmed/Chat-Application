@@ -26,7 +26,7 @@ const Chat = () => {
       <div>
         {/* <div>Chats</div> */}
         <div className="msgs">
-          {messages.map(({ id, text, photoURL, uid }) => (
+          {messages.map(({ id, text, photoURL, uid, name }) => (
             <div>
               <div
                 key={id}
@@ -35,7 +35,10 @@ const Chat = () => {
                 }`}
               >
                 <img src={photoURL} alt="" />
-                <p>{text}</p>
+                <div>
+                  <p>{name}</p>
+                  <p>{text}</p>
+                </div>
               </div>
             </div>
           ))}
